@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>API</title>
+			</head>
+			<body>
+			<center>
+			<input type="text" id="tgid" placeholder="ID"><br>
+			<input type="text" id="Message" placeholder="message"><br>
+			<button onclick="send()">Send</button>
+			</center>
+			<script>
+			send = function() {
+			var email = document.getElementById("tgid").value;
+			var mess = document.getElementById("Message").value;
+			console.log(email)
+			console.log(mess)
+			var url = "https://api.telegram.org/bot5679696186:AAH9A7VBqbKF4vwDWfj4fV2C-VbrvXlPmPg/sendMessage?chat_id="+email+"&text="+mess
+
+           var xhr = new XMLHttpRequest();
+           xhr.open("POST", url);
+
+          xhr.setRequestHeader("Accept", "application/json");
+          xhr.setRequestHeader("Content-Type", "application/json");
+          xhr.setRequestHeader("Content-Length", "0");
+
+          xhr.send();
+          }
+			</script>
+				</body>
+				</html>
